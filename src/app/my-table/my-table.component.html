@@ -1,0 +1,43 @@
+<select (change)="filterProducts($event.target.value)">
+  <option value="All">All</option>
+  <option value="Category 1">Category 1</option>
+  <option value="Category 2">Category 2</option>
+  <option value="Category 2">Category 3</option>
+</select>
+<table class="table">
+  <tr>
+    <th>Id</th>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th></th>
+  </tr>
+  <tr *ngFor="let product of filtredProducts | slice: 0:rows" [ngStyle]="product.price > 500 ? {'color' : 'red'} : {}">
+    <td >{{ product?.id }}</td>
+    <td >{{ product?.name }}</td>
+    <td >{{ product?.price }}</td>
+    <td >{{ product?.category }}</td>
+    <td>
+      <button type="button" (click)="delete(product)"> удалить</button>
+    </td>
+  </tr>
+</table>
+<form class="form-group">
+  <div >
+    <label for="name">Name</label>
+    <input class="form-control" type="text" id="name" [(ngModel)]="name" name="name">
+  </div>
+  <div>
+    <label for="price">Price</label>
+    <input  class="form-control" type="number" id="price" [(ngModel)]="price" name="price">
+  </div>
+  <div>
+    <label for="category">Category</label>
+    <select  class="form-control" id="category" [(ngModel)]="category" name="category">
+      <option value="Category 1">Category 1</option>
+      <option value="Category 2">Category 2</option>
+      <option value="Category 2">Category 3</option>
+    </select>
+  </div>
+  <button (click)="saveTempProduct()">Save</button>
+</form>
