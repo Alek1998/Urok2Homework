@@ -22,16 +22,17 @@
     </td>
   </tr>
 </table>
-<form class="form-group">
-  <div >
+
+<form >
+  <div class="form-group">
     <label for="name">Name</label>
     <input class="form-control" type="text" id="name" [(ngModel)]="name" name="name">
   </div>
-  <div>
+  <div class="form-group">
     <label for="price">Price</label>
     <input  class="form-control" type="number" id="price" [(ngModel)]="price" name="price">
   </div>
-  <div>
+  <div class="form-group">
     <label for="category">Category</label>
     <select  class="form-control" id="category" [(ngModel)]="category" name="category">
       <option value="">Select one</option>
