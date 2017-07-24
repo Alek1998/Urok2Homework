@@ -6,7 +6,4 @@ import {Component, OnChanges} from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  printLog(id: number){
-    console.log(id);
-  }
 }

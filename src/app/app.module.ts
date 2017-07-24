@@ -3,20 +3,33 @@ import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
-import { AppComponent } from './app.component';
-import { MyTableComponent } from './my-table/my-table.component';
+import {
+  AppComponent,
+  AdminComponent,
+  MyTableComponent,
+  HomeComponent,
+  AppRoutingModule,
+  ProductService
+} from './index';
+import {ProductsModule} from "./products/products.module";
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyTableComponent
+    MyTableComponent,
+    AdminComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule,
+    ProductsModule
   ],
-  providers: [],
+  providers: [
+    ProductService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
