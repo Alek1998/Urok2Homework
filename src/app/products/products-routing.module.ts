@@ -4,6 +4,7 @@ import {ProductListComponent} from "./product-list/product-list.component";
 import {ProductDetailsComponent} from "./product-details/product-details.component";
 import {ProductsComponent} from "./products.component";
 import {MyTableComponent} from "./my-table/my-table.component";
+import {CreateProductComponent} from "./create-product/create-product.component";
 
 @NgModule({
   imports: [
@@ -24,6 +25,10 @@ import {MyTableComponent} from "./my-table/my-table.component";
                 component: ProductDetailsComponent
               }
             ]
+          },
+          {
+            path: "create",
+            component: CreateProductComponent
           }
           ]
       }

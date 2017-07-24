@@ -34,9 +34,7 @@ export class MyTableComponent implements OnInit{
   @Output() onDelete: EventEmitter<number> = new EventEmitter();
   products: Product[];
   filtredProducts: Product[];
-  name: string;
-  price: number;
-  category: string = "";
+  tempProdcut: Product = {id: undefined, name: undefined, price: undefined, category: ""};
 
   constructor(private productService: ProductService, @Inject(productToken) private data: any) {}
 
@@ -61,14 +59,14 @@ export class MyTableComponent implements OnInit{
   saveTempProduct(){
     this.productService.saveProduct({
       id: undefined,
-      name :  this.name ,
-      price : this.price,
-      category: this.category
+      name :  this.tempProdcut.name ,
+      price : this.tempProdcut.price,
+      category: this.tempProdcut.category
     });
 
-    this.name = null;
-    this.category = null;
-    this.price = null;
+    this.tempProdcut.name = null;
+    this.tempProdcut.category = null;
+    this.tempProdcut.price = null;
   }
 }
 

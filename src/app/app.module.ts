@@ -6,19 +6,18 @@ import { HttpModule } from '@angular/http';
 import {
   AppComponent,
   AdminComponent,
-  MyTableComponent,
   HomeComponent,
   AppRoutingModule,
   ProductService
 } from './index';
 import {ProductsModule} from "./products/products.module";
+import { CreateProductComponent } from './products/create-product/create-product.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    MyTableComponent,
     AdminComponent,
-    HomeComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
